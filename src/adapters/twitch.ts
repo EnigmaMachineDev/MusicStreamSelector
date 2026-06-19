@@ -20,13 +20,14 @@ function isTwitchHost(host: string): boolean {
 }
 
 function parsedFor(login: string): ParsedChannel {
+  const id = login.toLowerCase()
   return {
     platform: 'twitch',
-    identifier: login.toLowerCase(),
+    identifier: id,
     kind: 'login',
-    canonicalUrl: `https://www.twitch.tv/${login.toLowerCase()}`,
+    canonicalUrl: `https://www.twitch.tv/${id}`,
     suggestedLabel: login,
-    // No client-side thumbnail (Twitch needs an API key); previews still work.
+    thumbnailUrl: `https://static-cdn.jtvnw.net/previews-ttv/live_user_${id}-320x180.jpg`,
     previewable: true,
   }
 }

@@ -71,7 +71,7 @@ export const YouTubeAdapter: PlatformAdapter = {
     if (host === 'youtu.be') {
       const [videoId] = pathSegments(url)
       if (videoId && VIDEO_ID_RE.test(videoId)) {
-        return parsed(videoId, 'video', `https://www.youtube.com/watch?v=${videoId}`, videoId)
+        return parsed(videoId, 'video', `https://www.youtube.com/watch?v=${videoId}`, '')
       }
       return null
     }
@@ -79,7 +79,7 @@ export const YouTubeAdapter: PlatformAdapter = {
     // watch?v=VIDEO_ID
     const vParam = url.searchParams.get('v')
     if (vParam && VIDEO_ID_RE.test(vParam)) {
-      return parsed(vParam, 'video', `https://www.youtube.com/watch?v=${vParam}`, vParam)
+      return parsed(vParam, 'video', `https://www.youtube.com/watch?v=${vParam}`, '')
     }
 
     const segs = pathSegments(url)
@@ -89,7 +89,7 @@ export const YouTubeAdapter: PlatformAdapter = {
 
     // /channel/UC…  (best case — keyless live preview)
     if (first === 'channel' && second && CHANNEL_ID_RE.test(second)) {
-      return parsed(second, 'channel', `https://www.youtube.com/channel/${second}/live`, second)
+      return parsed(second, 'channel', `https://www.youtube.com/channel/${second}/live`, '')
     }
 
     // /embed/live_stream?channel=UC…  (checked before the generic video case below,
@@ -97,7 +97,7 @@ export const YouTubeAdapter: PlatformAdapter = {
     if (first === 'embed' && second === 'live_stream') {
       const ch = url.searchParams.get('channel')
       if (ch && CHANNEL_ID_RE.test(ch)) {
-        return parsed(ch, 'channel', `https://www.youtube.com/channel/${ch}/live`, ch)
+        return parsed(ch, 'channel', `https://www.youtube.com/channel/${ch}/live`, '')
       }
       return null
     }
@@ -107,7 +107,7 @@ export const YouTubeAdapter: PlatformAdapter = {
       second &&
       VIDEO_ID_RE.test(second)
     ) {
-      return parsed(second, 'video', `https://www.youtube.com/watch?v=${second}`, second)
+      return parsed(second, 'video', `https://www.youtube.com/watch?v=${second}`, '')
     }
 
     // /@handle  → link-only (channel id not in URL)
