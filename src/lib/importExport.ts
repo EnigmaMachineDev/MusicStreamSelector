@@ -17,7 +17,7 @@ export function serializeExport(data: AppData): string {
   return JSON.stringify(envelope, null, 2)
 }
 
-/** Timestamped filename like `musicstreamselector-2026-06-14.json`. */
+/** Timestamped filename like `streamdial-2026-06-14.json`. */
 export function exportFilename(now = new Date()): string {
   const stamp = now.toISOString().slice(0, 10)
   return `${SITE_NAME.toLowerCase()}-${stamp}.json`
@@ -58,7 +58,7 @@ export function parseImport(text: string): ImportResult {
   if (!hasChannels && !hasLists) {
     return {
       ok: false,
-      error: 'File does not look like a MusicStreamSelector export (no lists or channels).',
+      error: 'File does not look like a StreamDial export (no lists or channels).',
     }
   }
   // migrate() normalizes, drops invalid entries, and repairs references.

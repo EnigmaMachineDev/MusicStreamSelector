@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
-import { Database, Home, Menu, Radio, X } from 'lucide-react'
+import { Coffee, Database, Home, Menu, Radio, X } from 'lucide-react'
 import { ORG_NAME, SITE_NAME, SITE_NAME_SHORT } from '../config/site'
 
 const navItems = [
@@ -54,6 +54,15 @@ export default function Layout() {
                 </Link>
               )
             })}
+            <a
+              href="https://buymeacoffee.com/EnigmaMachineDev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors text-brand-muted hover:text-brand-text hover:bg-brand-hover"
+            >
+              <Coffee size={14} />
+              <span>Support</span>
+            </a>
           </nav>
 
           <button
@@ -88,6 +97,16 @@ export default function Layout() {
                 </Link>
               )
             })}
+            <a
+              href="https://buymeacoffee.com/EnigmaMachineDev"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm transition-colors text-brand-muted hover:text-brand-text hover:bg-brand-hover"
+            >
+              <Coffee size={16} />
+              <span>Support</span>
+            </a>
           </nav>
         )}
       </header>

@@ -1,15 +1,13 @@
 /**
  * Single source of truth for the site's identity.
  *
- * `SITE_NAME` is a PLACEHOLDER ("MusicStreamSelector" is a working title). It is
- * referenced everywhere user-facing — document title, header, footer, metadata —
- * so a future rename to a single-word Mechanicus name is a one-line change here,
- * not a find-and-replace across the tree.
+ * Referenced everywhere user-facing — document title, header, footer, metadata —
+ * so a rename is a one-line change here, not a find-and-replace across the tree.
  */
-export const SITE_NAME = 'MusicStreamSelector'
+export const SITE_NAME = 'StreamDial'
 
 /** Short form used in tight spaces (e.g. mobile header). */
-export const SITE_NAME_SHORT = 'MSS'
+export const SITE_NAME_SHORT = 'StreamDial'
 
 /** Org that builds and owns the site (footer attribution). */
 export const ORG_NAME = 'EnigmaMachineDev'

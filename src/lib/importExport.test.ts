@@ -70,7 +70,7 @@ describe('parseImport', () => {
 describe('exportFilename', () => {
   it('is lowercase and date-stamped', () => {
     expect(exportFilename(new Date('2026-06-14T10:00:00Z'))).toBe(
-      'musicstreamselector-2026-06-14.json',
+      'streamdial-2026-06-14.json',
     )
   })
 })
