@@ -123,7 +123,7 @@ export default function Layout() {
             <Link to="/privacy-policy" className="hover:text-brand-bright transition-colors">Privacy Policy</Link>
           </div>
           <p>
-            {SITE_NAME} — a free, browser-only tool. No account, no tracking. Your data stays on
+            {SITE_NAME} — a free, browser-only tool. No account required. Your data stays on
             your device.
           </p>
           <p className="mt-1">
